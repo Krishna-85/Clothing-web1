@@ -27,22 +27,24 @@ getSingleproduct()
         return <Loading />;
       }
   return (
-    <div className='w-[70%] flex gap-10 items-center    h-full   m-auto p-[10%]'>
-<img className='h-[80%] w-[40%] object-cover' src={`${products.image}`} alt="" />
-
-<div className="font-semibold w-[90%]  content">
-    <h1 className='mb-2 text-3xl font-semibold'>{products.title}</h1>
-    <h1 className='text-xl mb-2 text-zinc-400'>{products.category}</h1>
-    <h2 className='text-red-400 mb-2'>₹109.95</h2>
-    <p className='mb-10'>{products.description}</p>
-    
-    <Link className=' mr-5 py-2 px-5 border rounded border-blue-300'>Edit</Link>
-    <Link className='py-2 px-5 border rounded border-red-300'>Delete</Link>
-
-    
+<div className="w-full sm:w-[90%] md:w-[70%] flex flex-col md:flex-row gap-5 items-center m-auto p-5">
+  <img 
+    className="w-full md:w-[40%] h-auto object-contain rounded" 
+    src={`${products.image}`} 
+    alt="" 
+  />
+  <div className="font-semibold w-full md:w-[60%] content text-center md:text-left">
+    <h1 className="mb-2 text-xl md:text-3xl font-semibold">{products.title}</h1>
+    <h1 className="text-base md:text-xl mb-2 text-zinc-400">{products.category}</h1>
+    <h2 className="text-red-400 mb-2 text-lg md:text-xl">₹109.95</h2>
+    <p className="mb-5 text-sm md:text-base">{products.description}</p>
+    <div className="flex justify-center md:justify-start gap-3">
+      <Link className="py-2 px-4 border rounded border-blue-300">Edit</Link>
+      <Link className="py-2 px-4 border rounded border-red-300">Delete</Link>
+    </div>
+  </div>
 </div>
 
-    </div>
   )
 }
 
